@@ -10,17 +10,17 @@
         <ul class="navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" target="blank" href="{{ route('home') }}">Home</a>
+            <a class="nav-link" aria-current="page"  href="{{ route('home') }}">Home</a>
           </li>
 
-          <div>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" target="blank" href="{{ route('login') }}">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" target="blank" href="{{ route('register') }}">Registrati</a>
-            </li>
-          </div>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{ route('login') }}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{ route('register') }}">Registrati</a>
+          </li>
+
 
           {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

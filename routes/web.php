@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -34,5 +35,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// rotte Project
+Route::middleware(['auth', 'verified'])
+    ->prefix('projects')
+    ->name('projects.')
+    ->group(function () {
+        Route::resource('projects', ProjectsController::class);
+    });
 
 require __DIR__ . '/auth.php';

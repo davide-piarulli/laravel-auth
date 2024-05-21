@@ -14,6 +14,9 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" target="blank" href="{{ route('home') }}">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{ route('projects.projects.index') }}">Progetti</a>
+          </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

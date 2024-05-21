@@ -12,7 +12,7 @@ Nel pomeriggio, rifate ciò che abbiamo visto insieme stamattina.
 3. installare breeze php artisan breeze:install
 4. installare il pacchetto di Pacifici composer require pacificdev/laravel_9_preset
 5. installare php artisan preset:ui bootstrap --auth
-
+per mac modificare il file config
 ---- Sviluppo --------
 
 1. Creare il DB OK
@@ -20,7 +20,7 @@ Nel pomeriggio, rifate ciò che abbiamo visto insieme stamattina.
 3. Nelle view aggiungere le cartelle guest e admin OK
 4. customizzate il layout guest e aggiungere la view home in view/guest OK
 5. creare il controller Guest/PageController che in index restituisce la view guest.home. php artisan make:controller Guest/PageController OK
-6. Aggiornare la rotta home OK - push
+6. Aggiornare la rotta home OK 
 7. Creare il layout admin.blade OK
 8. Creare il Admin/DashboardController chi in index punta alla view admin.home che estende il layout admin OK
 9. Raggruppare le rotte admin protette da Middleware impostando prefisso e nome OK
