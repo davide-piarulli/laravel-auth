@@ -1,4 +1,4 @@
 @extends('layouts.guest')
 @section('content')
-  <h1>Sei nella Homepage di Guest</h1>
+  <h1>Ciao Guest, sei nella Home</h1>
 @endsection

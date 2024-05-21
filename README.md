@@ -20,12 +20,12 @@ Nel pomeriggio, rifate ciò che abbiamo visto insieme stamattina.
 3. Nelle view aggiungere le cartelle guest e admin OK
 4. customizzate il layout guest e aggiungere la view home in view/guest OK
 5. creare il controller Guest/PageController che in index restituisce la view guest.home. php artisan make:controller Guest/PageController OK
-6. Aggiornare la rotta home OK
+6. Aggiornare la rotta home OK - push
 7. Creare il layout admin.blade OK
-8. Creare il Admin/DashboardController chi in index punta alla view admin.home che estende il layout admin
-9. Raggruppare le rotte admin protette da Middleware impostando prefisso e nome
-10. Creare la rotta admin/home che punta a DashboardController@index
-11. Modificare RouteServiceProvider in modo che la rotta admin di default sia ‘/admin’
+8. Creare il Admin/DashboardController chi in index punta alla view admin.home che estende il layout admin OK
+9. Raggruppare le rotte admin protette da Middleware impostando prefisso e nome OK
+10. Creare la rotta admin/home che punta a DashboardController@index OK
+11. Modificare RouteServiceProvider in modo che la rotta admin di default sia ‘/admin’ OK
 12. Nell’header del layout admin collegare la home della dashboard, la home pubblica, mettere il nome dell’utente loggato e il bottone funzionante logout
     BONUS
     Creazione del modello `Project` con relativa migrazione, seeder, controller e rotte e stampare la index dei progetti (protetta da middleware)
