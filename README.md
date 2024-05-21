@@ -26,6 +26,7 @@ Nel pomeriggio, rifate ciò che abbiamo visto insieme stamattina.
 9. Raggruppare le rotte admin protette da Middleware impostando prefisso e nome OK
 10. Creare la rotta admin/home che punta a DashboardController@index OK
 11. Modificare RouteServiceProvider in modo che la rotta admin di default sia ‘/admin’ OK
-12. Nell’header del layout admin collegare la home della dashboard, la home pubblica, mettere il nome dell’utente loggato e il bottone funzionante logout
+12. Nell’header del layout admin collegare la home della dashboard, la home pubblica, mettere il nome dell’utente loggato e il bottone funzionante logout OK
+    
     BONUS
     Creazione del modello `Project` con relativa migrazione, seeder, controller e rotte e stampare la index dei progetti (protetta da middleware)
