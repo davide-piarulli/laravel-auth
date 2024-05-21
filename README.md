@@ -1,0 +1,28 @@
+## Laravel Auth
+Ciao ragazzi,
+creiamo con Laravel il nostro sistema di gestione del nostro Portfolio di progetti.
+Oggi iniziamo un nuovo progetto che si arricchirà nel corso delle prossime lezioni: man mano aggiungeremo funzionalità e vedremo la nostra applicazione crescere ed evolvere.
+Nel pomeriggio, rifate ciò che abbiamo visto insieme stamattina.
+// PROCEDURE PER AUTH
+----- Creazione progetto  -----
+1. entra nella cartella cd laravel-auth
+2. Scaricare Breeze composer require laravel/breeze --dev
+3. installare breeze php artisan breeze:install
+4. installare il pacchetto di Pacifici composer require pacificdev/laravel_9_preset
+5. installare php artisan preset:ui bootstrap --auth
+
+---- Sviluppo --------
+1. Creare il DB
+2. Fare la migration
+3. Nelle view aggiungere le cartelle guest e admin
+4. customizzate  il layout guest e aggiungere la view home in view/guest
+5. creare il controller Guest/PageController che in index restituisce la view guest.home
+6. Aggiornare la rotta home
+7. Creare il layout admin.blade
+8. Creare il Admin/DashboardController chi in index punta alla view admin.home che estende il layout admin
+9. Raggruppare le rotte admin protette da Middleware impostando prefisso e nome
+10. Creare la rotta admin/home che punta a DashboardController@index
+11. Modificare RouteServiceProvider in modo che la rotta admin di default sia ‘/admin’
+12. Nell’header del layout admin collegare la home della dashboard, la home pubblica, mettere il nome dell’utente loggato e il bottone funzionante logout
+BONUS
+Creazione del modello `Project` con relativa migrazione, seeder, controller e rotte e stampare la index  dei progetti (protetta da middleware)
