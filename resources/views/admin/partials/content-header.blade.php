@@ -22,83 +22,45 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <form>
-
+          <form action="{{ route('admin.projects.store') }}" method="POST">
+            @csrf
             <div class="row">
-              <div class="col-8">
+              <div class="col">
                 <div class="mb-3">
-                  <label for="nome" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="nome">
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="mb-3">
-                  <label for="cognome" class="form-label">Cognome</label>
-                  <input type="text" class="form-control" id="cognome">
+                  <label for="title" class="form-label">Titolo Progetto</label>
+                  <input type="text" class="form-control" id="title" name="title">
                 </div>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-8">
+              <div class="col">
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1">
+                  <label for="link" class="form-label">Link</label>
+                  <input type="text" class="form-control" id="link" name="link">
                 </div>
               </div>
-              <div class="col-4">
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="indirizzo" class="form-label">Indirizzo</label>
-              <input type="text" class="form-control" id="indirizzo">
             </div>
 
             <div class="row">
-              <div class="col-6">
+              <div class="col">
                 <div class="mb-3">
-                  <label for="citta" class="form-label">Città</label>
-                  <input type="text" class="form-control" id="citta">
+                  <label for="type" class="form-label">Tipo</label>
+                  <input type="text" class="form-control" id="type" name="type">
                 </div>
               </div>
-              <div class="col-4">
-                <label for="stato" class="form-label">Stato</label>
-                <div class="dropdown mb-3">
-                  <button class="btn border border-1 bg-white dropdown-toggle w-100 " type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false" id="stato">
-                    Scegli..
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Italia</a></li>
-                    <li><a class="dropdown-item" href="#">Spagna</a></li>
-                    <li><a class="dropdown-item" href="#">Regno Unito</a></li>
-                  </ul>
+            </div>
 
-                </div>
-              </div>
-              <div class="col-2">
+            <div class="row">
+              <div class="col">
                 <div class="mb-3">
-                  <label for="cap" class="form-label">CAP</label>
-                  <input type="text" class="form-control" id="cap">
+                  <label for="description" class="form-label">Descrizione</label>
+                  <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
                 </div>
               </div>
             </div>
 
-            <div class="mb-3">
-              <label for="foto" class="form-label">Foto</label>
-              <input type="text" class="form-control" id="foto" placeholder="Nessun file selezionato">
-            </div>
-
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Seleziona per proseguire</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Salva</button>
+            <button type="submit" class="btn btn-primary">Aggiungi</button>
             <button type="reset" class="btn btn-warning">Svuota</button>
           </form>
         </div>
