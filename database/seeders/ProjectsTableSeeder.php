@@ -23,7 +23,8 @@ class ProjectsTableSeeder extends Seeder
             $new_project->slug = Helper::createSlug($new_project->title, new Project());
             $new_project->type = $faker->word();
             $new_project->link = $faker->url();
-            $new_project->description = $faker->description();
+            $new_project->description = $faker->paragraph(8, true);
+            // dump($new_project);
             $new_project->save();
         }
     }
