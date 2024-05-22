@@ -21,20 +21,23 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
+
+
 <body class="font-sans text-gray-900 antialiased">
+  {{-- non importo la header perchè voglio la sezione admin solamente con sidebar --}}
   {{-- @include('admin.partials.header') --}}
   <main>
-    <!-- DP-CONTAINER CON SIDEBAR -->
-    <div class="dp-container debug d-flex ">
+    <div class="dp-container d-flex ">
+      <aside>
+        @include('admin.partials.sidebar')
+      </aside>
 
-      {{-- SIDEBAR --}}
-      @include('admin.partials.sidebar')
-      {{-- //SIDEBAR --}}
+      <div class="content">
+        @yield('content')
+      </div>
 
-      
-
-
-      @yield('content')
+    </div>
+  </main>
 </body>
 
 </html>

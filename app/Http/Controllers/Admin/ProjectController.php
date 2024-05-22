@@ -16,7 +16,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::paginate(10);
-        return view('projects.index', compact('projects'));
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
@@ -32,11 +32,14 @@ class ProjectController extends Controller
      */
     public function store(ProjectRequest $request)
     {
+        // prima di inserire un nuovo progetto, devo verificare che non sia già presente
         // dump($request->all());
         $form_data = $request->all();
         $exist = Project::where('title', $form_data['title'])->first();
+        // Se esiste ritorno alla index con un messaggio di errore
         if ($exist) {
             return redirect()->route('admin.projects.index')->with('error', 'Il progetto esiste già');
+            // Se NON esiste la salvo e ritorno alla index con messaggio di success
         } else {
             $new_project = new Project();
             $form_data['slug'] = Helper::createSlug($form_data['title'], Project::class);
