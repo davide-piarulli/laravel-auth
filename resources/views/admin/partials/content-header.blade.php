@@ -4,24 +4,8 @@
     <div class="col-6 ">
       <div class="p-3">
         <h3 class="d-inline">Boolpress</h3>
-        {{-- <span class="chip">Piano blaze</span> --}}
       </div>
-      {{-- <div class="p-3">
-        <span class="chip">3 app</span>
-        <i class="fa-solid fa-angles-right"></i>
-        <span class="chip d-none d-lg-inline-block">Boolean mobile app</span>
-        <span class="chip d-none d-lg-inline-block">Boolean web app</span>
-        <span class="chip d-none d-lg-inline-block">Boolean blog app</span>
-        <span class="chip d-lg-block d-xl-none ">+</span>
-      </div> --}}
     </div>
-
-    {{-- <div class="col-3">
-      <div class="p-3">
-        <p>Studenti online negli ultimi 30 minuti</p>
-        <p class="online-users">125</p>
-      </div>
-    </div> --}}
 
     <div class="col-3 d-flex align-content-center h-100 py-3">
       <p>Nuovo Progetto</p>

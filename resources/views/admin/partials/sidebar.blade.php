@@ -1,5 +1,5 @@
 <!-- LEFT SIDEBAR -->
-<div class="sidebar d-flex flex-column justify-content-between  flex-shrink-0  text-white h-100 ">
+<aside class="sidebar d-flex flex-column justify-content-between  flex-shrink-0  text-white h-100 ">
 
   <!-- top sidebar -->
   <div>
@@ -17,7 +17,7 @@
         </a>
       </li>
       <li>
-        <a href="{{ route('projects.projects.index') }}" class="nav-link text-white">
+        <a href="{{ route('admin.projects.index') }}" class="nav-link text-white">
           <i class="fa-solid fa-signal"></i>
           <span class="d-none d-lg-inline-block">Progetti</span>
         </a>
@@ -44,5 +44,5 @@
     </ul>
   </div>
 
-</div>
+</aside>
 <!-- / LEFT SIDEBAR -->

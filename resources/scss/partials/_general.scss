@@ -36,15 +36,14 @@
     width: 150px;
     background-color: #13293f;
     /* background: url(../img/sidebar-bg.png); */
+    i{
+      padding: 10px;
+    }
+    li:hover{
+        background-color: #355c82;
+      }
   }
 
-  .sidebar i{
-    padding: 10px;
-  }
-
-  .sidebar li:hover{
-    background-color: #355c82;
-  }
 
   /*********** MAIN CONTENT ******************/
   .main-content{
@@ -59,11 +58,6 @@
   .main-content .content-header{
     height: 100px;
     background-color: #1b72e8;
-  }
-
-  .main-content .content-header .chip:hover{
-    background-color: #023986;
-
   }
 
   .main-content .content-header .online-users{

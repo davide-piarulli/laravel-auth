@@ -31,35 +31,8 @@
       @include('admin.partials.sidebar')
       {{-- //SIDEBAR --}}
 
-      <!-- MAIN CONTENT -->
-      <div class="main-content">
 
-        <!-- content header -->
-        @include('admin.partials.content-header')
-        <!-- /content header -->
-
-
-        <!-- CONTENT BODY -->
-        <div class="content-body">
-
-          <div class="row  debug">
-
-            @include('admin.partials.content-body-left')
-
-          </div>
-          <!-- chiusura row -->
-
-        </div>
-        <!-- /CONTENT BODY -->
-
-      </div>
-      <!-- /MAIN CONTENT -->
-
-    </div>
-    <!-- /DP-CONTAINER CON SIDEBAR -->
-  </main>
-
-  @yield('content')
+      @yield('content')
 </body>
 
 </html>
