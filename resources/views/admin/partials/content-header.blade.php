@@ -22,13 +22,33 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
+
+          {{-- stampo box con errori relativi ai campi --}}
+          @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+              <ul>
+                @foreach ($errors->all() as $error)
+                  <li>
+                    {{ $error }}
+                  </li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
+
           <form action="{{ route('admin.projects.store') }}" method="POST">
             @csrf
             <div class="row">
               <div class="col">
                 <div class="mb-3">
-                  <label for="title" class="form-label">Titolo Progetto</label>
-                  <input type="text" class="form-control" id="title" name="title">
+                  <label for="title" class="form-label">Titolo Progetto (*)</label>
+                  <input type="text" class="form-control @error('title') is-invalid @enderror" id="title"
+                    name="title" value="{{ old('title') }}">
+                  @error('title')
+                    <small class="text-danger">
+                      {{ $message }}
+                    </small>
+                  @enderror
                 </div>
               </div>
             </div>
@@ -36,8 +56,14 @@
             <div class="row">
               <div class="col">
                 <div class="mb-3">
-                  <label for="link" class="form-label">Link</label>
-                  <input type="text" class="form-control" id="link" name="link">
+                  <label for="link" class="form-label">Link (*)</label>
+                  <input type="text" class="form-control @error('link') is-invalid @enderror" id="link"
+                    name="link" value="{{ old('link') }}">
+                  @error('link')
+                    <small class="text-danger">
+                      {{ $message }}
+                    </small>
+                  @enderror
                 </div>
               </div>
             </div>
@@ -45,8 +71,14 @@
             <div class="row">
               <div class="col">
                 <div class="mb-3">
-                  <label for="type" class="form-label">Tipo</label>
-                  <input type="text" class="form-control" id="type" name="type">
+                  <label for="type" class="form-label">Tipo (*)</label>
+                  <input type="text" class="form-control @error('type') is-invalid @enderror" id="type"
+                    name="type" value="{{ old('type') }}">
+                  @error('type')
+                    <small class="text-danger">
+                      {{ $message }}
+                    </small>
+                  @enderror
                 </div>
               </div>
             </div>
@@ -55,7 +87,8 @@
               <div class="col">
                 <div class="mb-3">
                   <label for="description" class="form-label">Descrizione</label>
-                  <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+                  <textarea class="form-control" name="description" id="description" cols="30" rows="10"
+                    value="{{ old('description') }}"></textarea>
                 </div>
               </div>
             </div>

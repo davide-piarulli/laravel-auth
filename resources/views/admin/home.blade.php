@@ -1,26 +1,27 @@
 @extends('layouts.admin')
 @section('content')
-  <!-- MAIN CONTENT -->
-  <div class="main-content">
+  <main>
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
 
-    <!-- content header -->
-    @include('admin.partials.content-header')
-    <!-- /content header -->
+      <!-- content header -->
+      @include('admin.partials.content-header')
+      <!-- /content header -->
 
-    <!-- CONTENT BODY -->
-    <div class="content-body">
+      <!-- CONTENT BODY -->
+      <div class="content-body">
 
-      <div class="row  debug">
-        <h2>Qui ci potrebbero essere le statistiche</h2>
-        @include('admin.partials.content-faq')
+        <div class="row  debug">
+          <h2>Qui ci potrebbero essere le statistiche</h2>
+          @include('admin.partials.content-faq')
+        </div>
+        <!-- chiusura row -->
+
       </div>
-      <!-- chiusura row -->
+      <!-- /CONTENT BODY -->
 
     </div>
-    <!-- /CONTENT BODY -->
-
-  </div>
-  <!-- /MAIN CONTENT -->
+    <!-- /MAIN CONTENT -->
 
 
   </main>

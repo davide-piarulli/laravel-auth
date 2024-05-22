@@ -24,10 +24,10 @@
 
           @foreach ($projects as $project)
             <tr>
-              <th scope="row">{{ $project->title }}</th>
-              <td>{{ $project->link }}</td>
-              <td>{{ $project->type }}</td>
-              <td>{{ $project->description }}</td>
+              <th scope="row"><input type="text" value="{{ $project->title }}" name="title"></th>
+              <td><input type="text" value="{{ $project->link }}" name="link"></td>
+              <td><input type="text" value="{{ $project->type }}" name="type"></td>
+              <td><input type="text" value="{{ $project->description }}" name="description"></td>
               <td class="icons">
                 <form action="" method="POST">
                   <button type="button" class="btn btn-secondary">
