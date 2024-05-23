@@ -2,6 +2,19 @@
 @section('content')
   @include('admin.partials.content-header')
 
+  {{-- stampo box con errori relativi ai campi --}}
+  @if ($errors->any())
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>
+            {{ $error }}
+          </li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+
   @if (session('error'))
     <div class="alert alert-danger" role="alert">
       {{ session('error') }}
@@ -33,22 +46,30 @@
 
         @foreach ($projects as $project)
           <tr>
-            <th scope="row"><input type="text" value="{{ $project->title }}" name="title"></th>
-            <td><input type="text" value="{{ $project->link }}" name="link"></td>
-            <td><input type="text" value="{{ $project->type }}" name="type"></td>
-            <td><input type="text" value="{{ $project->description }}" name="description"></td>
-            <td class="icons d-flex ">
-              <form action="" method="POST">
-                <button type="button" class="btn btn-warning">
+            <form action="{{ route('admin.projects.update', $project) }}" method="POST"
+              id="form-edit-{{ $project->id }}">
+              @csrf
+              @method('PUT')
+              <th scope="row"><input type="text" value="{{ $project->title }}" name="title"></th>
+              <td><input type="text" value="{{ $project->link }}" name="link"></td>
+              <td><input type="text" value="{{ $project->type }}" name="type"></td>
+              <td><input type="text" value="{{ $project->description }}" name="description"></td>
+              <td class="icons d-flex ">
+
+                <button type="submit" class="btn btn-warning me-3 " onclick="submitForm{{ $project->id }}">
                   <i class="fa-solid fa-pencil"></i>
                 </button>
-              </form>
-              <form action="" method="post">
-                <button type="button" class="btn btn-danger">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              </form>
-            </td>
+
+                <form action="{{ route('admin.projects.destroy', $project) }}" method="post"
+                  onsubmit="return confirm('Sei sicuro di voler eliminare il progetto?')">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btn-danger">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                </form>
+              </td>
+            </form>
           </tr>
         @endforeach
 
@@ -60,4 +81,11 @@
     </div>
 
   </div>
+  <script>
+    function submitForm(id) {
+      console.log(id);
+      const form = document.getElementById('form-edit-${id}');
+      form.submit();
+    }
+  </script>
 @endsection

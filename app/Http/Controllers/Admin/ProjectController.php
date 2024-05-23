@@ -77,7 +77,7 @@ class ProjectController extends Controller
         $exist = Project::where('title', $form_data['title'])->first();
 
         if ($exist) {
-            return redirect()->route('admin.projects.index')->with('errorexist', 'Progetto già esistente');
+            return redirect()->route('admin.projects.index')->with('error', 'Progetto già esistente');
         } else {
             if ($form_data['title'] === $project->title) {
                 $form_data['slug'] = $project->slug;
@@ -98,6 +98,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('admin.projects.index')->with('deleted', 'Il progetto' . ' ' . $project->title . ' ' . 'è stato cancellato con successo!');
+        return redirect()->route('admin.projects.index')->with('success', 'Il progetto è stato cancellato con successo.');
     }
 }
