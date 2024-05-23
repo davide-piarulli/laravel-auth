@@ -23,9 +23,9 @@
         </div>
         <div class="offcanvas-body">
 
-          
 
-          <form action="{{ route('admin.projects.store') }}" method="POST">
+
+          <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
               <div class="col">
@@ -75,9 +75,23 @@
             <div class="row">
               <div class="col">
                 <div class="mb-3">
+                  <label for="image" class="form-label">Immagine</label>
+                  <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                    name="image" value="{{ old('image') }}">
+                  @error('image')
+                    <small class="text-danger">
+                      {{ $message }}
+                    </small>
+                  @enderror
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
                   <label for="description" class="form-label">Descrizione</label>
-                  <textarea class="form-control" name="description" id="description" cols="30" rows="10"
-                    value="{{ old('description') }}"></textarea>
+                  <textarea class="form-control" name="description" id="description" cols="30" rows="5" value="">{{ old('description') }}</textarea>
                 </div>
               </div>
             </div>

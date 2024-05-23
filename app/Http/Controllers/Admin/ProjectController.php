@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
@@ -15,7 +17,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(10);
+        $projects = Project::orderBY('id', 'desc')->paginate(10);
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -35,6 +37,16 @@ class ProjectController extends Controller
         // prima di inserire un nuovo progetto, devo verificare che non sia già presente
         // dump($request->all());
         $form_data = $request->all();
+        // verifico esistenza dell'immagine
+        if (array_key_exists('image', $form_data)) {
+            // salvo img nello storage
+            $img_path = Storage::put('uploads', $form_data['image']);
+            // ottengo il nome originale dell'img
+            $original_name = $request->file('image')->getClientOriginalName();
+            $form_data['image'] = $img_path;
+            $form_data['img_original_name'] = $original_name;
+            // dump($img_path);
+        }
         $exist = Project::where('title', $form_data['title'])->first();
         // Se esiste ritorno alla index con un messaggio di errore
         if ($exist) {
@@ -54,9 +66,9 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(ProjectRequest $request)
     {
-        //
+        return view('admin.projects.show', compact('request'));
     }
 
     /**
@@ -72,6 +84,7 @@ class ProjectController extends Controller
      */
     public function update(ProjectRequest $request, Project $project)
     {
+        // dd($project);
         $form_data = $request->all();
 
         $exist = Project::where('title', $form_data['title'])->first();

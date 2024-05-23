@@ -54,22 +54,24 @@
               <td><input type="text" value="{{ $project->link }}" name="link"></td>
               <td><input type="text" value="{{ $project->type }}" name="type"></td>
               <td><input type="text" value="{{ $project->description }}" name="description"></td>
-              <td class="icons d-flex ">
-
-                <button type="submit" class="btn btn-warning me-3 " onclick="submitForm{{ $project->id }}">
-                  <i class="fa-solid fa-pencil"></i>
-                </button>
-
-                <form action="{{ route('admin.projects.destroy', $project) }}" method="post"
-                  onsubmit="return confirm('Sei sicuro di voler eliminare il progetto?')">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn btn-danger">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                </form>
-              </td>
             </form>
+
+            <td class="icons d-flex ">
+
+              <button class="btn btn-warning me-3 " onclick="submitForm({{ $project->id }})">
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+
+              <form action="{{ route('admin.projects.destroy', $project) }}" method="post"
+                onsubmit="return confirm('Sei sicuro di voler eliminare il progetto?')">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </form>
+
+            </td>
           </tr>
         @endforeach
 
@@ -83,8 +85,7 @@
   </div>
   <script>
     function submitForm(id) {
-      console.log(id);
-      const form = document.getElementById('form-edit-${id}');
+      const form = document.getElementById(`form-edit-${id}`);
       form.submit();
     }
   </script>
