@@ -1,9 +1,9 @@
 ## Laravel Auth
 
-Ciao ragazzi,
-creiamo con Laravel il nostro sistema di gestione del nostro Portfolio di progetti.
-Oggi iniziamo un nuovo progetto che si arricchirà nel corso delle prossime lezioni: man mano aggiungeremo funzionalità e vedremo la nostra applicazione crescere ed evolvere.
-Nel pomeriggio, rifate ciò che abbiamo visto insieme stamattina.
+![laravel auth preview](https://github.com/user-attachments/assets/987fad83-8117-469b-9d38-8f2122cb9cef)
+
+Creazione con Laravel del primo sistema di gestione del Portfolio di progetti.
+
 // PROCEDURE PER AUTH
 ----- Creazione progetto -----
 
